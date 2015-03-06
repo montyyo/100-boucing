@@ -49,9 +49,9 @@ public class BallDemo
             int ejex = rnd.nextInt(50);
             int ejey = rnd.nextInt(50);
             int radio = rnd.nextInt(80);
-            int r = rnd.nextInt(255);
-            int g = rnd.nextInt(255);
-            int b = rnd.nextInt(255);
+            int r = rnd.nextInt(256);
+            int g = rnd.nextInt(256);
+            int b = rnd.nextInt(256);
             
             ballsList.add( new BouncingBall(ejex, ejey, radio, new Color(r,g,b), ground, myCanvas)); 
             ballsList.get(i).draw();
@@ -73,6 +73,10 @@ public class BallDemo
             
                ballsList.get(i).move();
               
+               if( ballsList.get(i).getXPosition() >= 550 ) {
+                finished = true;
+               }
+               
             }
             //myCanvas.wait(50);           // small delay
             
@@ -81,9 +85,22 @@ public class BallDemo
             //ball2.move();
             // stop once ball has travelled a certain distance on x axis
             //|| ball2.getXPosition() >= 550
-            if( ballsList.get(0).getXPosition() >= 550 ) {
-                finished = true;
-            }
+          
         }
+    }
+    
+    /**
+     * Este método debe dibujar un rectángulo en la pantalla y tantas bolas como se indiquen
+     * como parámetro en la invocación del método. 
+     * Los objetos bola de esta actividad no serán del tipo BouncingBall:
+     * lo que debes hacer es crear una nueva clase denominada BoxBall (basándote en la clase BouncingBall, evidentemente).
+     * Las bolas de tipo BoxBall llevan siempre la misma velocidad (1 pixel cada vez),
+     * no les afecta la gravedad y lo que sucede es que cuando golpean una de las paredes del rectángulo 
+     * rebotan y cambian de direccion. La posición inicial, el color y la direccion de cada bola debe fijarse
+     * de manera aleatoria.
+     */
+    public void boxBounce()
+    {
+        
     }
 }
