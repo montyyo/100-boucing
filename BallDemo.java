@@ -81,7 +81,7 @@ public class BallDemo
             //ball2.move();
             // stop once ball has travelled a certain distance on x axis
             //|| ball2.getXPosition() >= 550
-            if( ballsList.get(numberOfBalls-1).getXPosition() >= 550 ) {
+            if( ballsList.get(0).getXPosition() >= 550 ) {
                 finished = true;
             }
         }
